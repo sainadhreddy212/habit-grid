@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0E9F8E">
+<meta name="theme-color" content="#F3F7FB">
 <meta name="robots" content="noindex">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -11,31 +11,22 @@
 <meta name="apple-mobile-web-app-title" content="Habit Grid">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Habit Grid</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F2F5F8; --surface:#FFFFFF; --surface-2:#E9EEF3; --ink:#121821; --muted:#5A6676; --line:#D9E0E8;
-  --accent:#0E9F8E; --accent-ink:#FFFFFF; --accent-soft:#D3F0EB; --danger:#CC3D55; --danger-soft:#FBE3E7;
+  color-scheme:light;
+  --bg:#F3F7FB; --surface:#FFFFFF; --surface-2:#EEF2F9; --ink:#16202E; --muted:#5F6B7C; --line:#DDE5EF;
+  --accent:#0E9F8E; --accent-ink:#FFFFFF; --accent-soft:#D8F3EF; --danger:#E11D48; --danger-soft:#FFE4EA;
+  --a1:#14B8A6; --a2:#3B82F6; --a3:#7C5CFC; --a4:#EC4899; --a5:#F59E0B;
+  --grad:linear-gradient(135deg,#14B8A6 0%,#3B82F6 55%,#7C5CFC 100%);
   --w1:#B39AF0; --w2:#8DB2F4; --w3:#F09BB9; --w4:#82D69D; --w5:#F5AE7F;
-  --shadow:0 1px 2px rgba(18,24,33,.06),0 4px 14px rgba(18,24,33,.05);
+  --shadow:0 2px 4px rgba(45,60,110,.05),0 10px 24px rgba(45,60,110,.08);
   --display:'Bricolage Grotesque','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0C1016; --surface:#151A22; --surface-2:#1E2530; --ink:#E8EDF3; --muted:#93A0B0; --line:#29323F;
-    --accent:#2DD4BF; --accent-ink:#04201C; --accent-soft:#11322E; --danger:#FF7B8E; --danger-soft:#3A1B22;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0C1016; --surface:#151A22; --surface-2:#1E2530; --ink:#E8EDF3; --muted:#93A0B0; --line:#29323F;
-  --accent:#2DD4BF; --accent-ink:#04201C; --accent-soft:#11322E; --danger:#FF7B8E; --danger-soft:#3A1B22;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box}
 html,body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
@@ -205,10 +196,10 @@ main{padding-bottom:96px}
 /* login */
 #lock{display:block;padding:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .lg{min-height:100%;display:flex;flex-direction:column}
-.lg-hero{background:linear-gradient(155deg,#0C1016 0%,#123037 55%,#0E9F8E 135%);color:#fff;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 28px) 20px 64px;border-radius:0 0 34px 34px}
-.lg-logo{width:96px;margin:0 auto 14px;display:grid;grid-template-columns:repeat(9,1fr);gap:3px;padding:9px;border-radius:22px;background:#0C1016;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.lg-hero{text-align:center;padding:calc(env(safe-area-inset-top,0px) + 28px) 20px 64px;border-radius:0 0 34px 34px}
+.lg-logo{width:96px;margin:0 auto 14px;display:grid;grid-template-columns:repeat(9,1fr);gap:3px;padding:9px;border-radius:22px}
 .lg-logo i{aspect-ratio:1;border-radius:2px;background:#1B2733}
-.lg-logo i.on{background:#0E9F8E;animation:pop .5s ease both}
+
 @keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
 .lg-hero h1{font-size:30px;font-weight:800;letter-spacing:-.03em;color:#fff}
 .lg-hero p{margin:4px 0 0;font-size:14px;color:rgba(255,255,255,.72)}
@@ -237,6 +228,154 @@ main{padding-bottom:96px}
 .lg-foot .linkbtn{margin-top:4px}
 .lg-note{text-align:center;color:var(--muted);font-size:12px;margin:0 auto 20px;max-width:320px;padding-inline:16px}
 @media (max-height:700px){.lg-hero{padding-bottom:52px;padding-top:calc(env(safe-area-inset-top,0px) + 16px)}.lg-logo{width:72px;margin-bottom:8px}.lg-hero h1{font-size:24px}.key{height:48px}.lg-hero p{display:none}}
+
+/* ===== v3: bright, animated theme ===== */
+html{background:#F3F7FB}
+body{background:transparent}
+button{-webkit-tap-highlight-color:transparent}
+.bgfx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(180deg,#E6F8F4 0%,#F0EFFF 52%,#FFF2E8 100%)}
+.bgfx i{position:absolute;border-radius:50%;filter:blur(46px);opacity:.6;animation:floaty 16s ease-in-out infinite}
+.bgfx i:nth-child(1){width:260px;height:260px;background:#7FE5D6;left:-80px;top:40px}
+.bgfx i:nth-child(2){width:300px;height:300px;background:#C9B8FF;right:-110px;top:38%;animation-delay:-5s;animation-duration:19s}
+.bgfx i:nth-child(3){width:240px;height:240px;background:#FFC9A3;left:-60px;bottom:-40px;animation-delay:-9s;animation-duration:22s}
+@keyframes floaty{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(34px,-26px) scale(1.12)}66%{transform:translate(-22px,30px) scale(.94)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes drawl{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes drawc{from{stroke-dashoffset:24}to{stroke-dashoffset:0}}
+@keyframes ring{from{stroke-dashoffset:var(--c)}}
+@keyframes boxpop{0%{transform:scale(.6)}55%{transform:scale(1.28)}100%{transform:scale(1)}}
+@keyframes cellpop{0%{transform:scale(.4)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+@keyframes chipin{0%{transform:translateY(0) scale(1)}55%{transform:translateY(-8px) scale(1.14)}100%{transform:translateY(-3px) scale(1.06)}}
+@keyframes bob{0%{transform:translateY(0)}40%{transform:translateY(-6px) scale(1.15)}100%{transform:translateY(0)}}
+@keyframes sheen{from{transform:translateX(-120%) skewX(-18deg)}to{transform:translateX(320%) skewX(-18deg)}}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+
+.top{padding-block:16px 8px}
+.logo{background:var(--grad);box-shadow:0 6px 14px rgba(59,130,246,.35);animation:wob 5s ease-in-out infinite}
+.logo i{background:#fff}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.iconbtn{background:#fff;color:var(--a3);transition:transform .15s}
+.iconbtn:active{transform:scale(.9) rotate(-8deg)}
+.card{border-radius:24px;background:rgba(255,255,255,.94)}
+.mnav h2{font-weight:800}
+.pill{transition:transform .12s}
+.pill:active{transform:scale(.92)}
+.pill.accent{background:var(--grad);color:#fff}
+.sec h3{display:flex;align-items:center;gap:8px}
+.sec h3::before{content:"";width:6px;height:18px;border-radius:3px;background:var(--grad)}
+
+/* hero summary card */
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,#0EA5A0 0%,#3B82F6 55%,#7C5CFC 100%);background-size:200% 200%;animation:gshift 9s ease infinite;box-shadow:0 14px 30px rgba(59,130,246,.35)}
+.hero::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-40px;top:-60px;background:rgba(255,255,255,.16);animation:floaty 9s ease-in-out infinite}
+.hero::after{content:"";position:absolute;top:0;bottom:0;width:36%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:sheen 4.5s ease-in-out infinite}
+.hero .eyebrow{color:rgba(255,255,255,.85)}
+.hero h3{color:#fff}
+.hero .big small{color:rgba(255,255,255,.8)}
+.hero .meter{background:rgba(255,255,255,.3);height:10px;border-radius:5px}
+.hero .meter i{background:#fff;border-radius:5px;transition:width .8s cubic-bezier(.2,.9,.25,1)}
+.hero p{color:rgba(255,255,255,.95);font-weight:600;font-size:14px;margin-top:10px}
+.hero.party{background:linear-gradient(135deg,#F59E0B 0%,#EC4899 55%,#7C5CFC 100%);background-size:200% 200%;box-shadow:0 14px 30px rgba(236,72,153,.35)}
+
+/* day strip */
+.chip{border-radius:16px;transition:transform .2s,box-shadow .2s}
+.chip:active{transform:scale(.92)}
+.chip.today{box-shadow:inset 0 0 0 2px var(--a1),var(--shadow)}
+.chip.sel{background:linear-gradient(160deg,#14B8A6,#7C5CFC);color:#fff;transform:translateY(-3px) scale(1.06);box-shadow:0 10px 20px rgba(124,92,252,.35)}
+.chip.sel .dw{color:#fff;opacity:.85}
+.chip.sel .bar{background:rgba(255,255,255,.35)}
+.chip.sel .bar i{background:#fff}
+
+/* habit rows */
+.hrow{position:relative;overflow:hidden;border-radius:20px;padding:13px 14px 13px 18px;box-shadow:inset 5px 0 0 var(--hc,var(--a1)),var(--shadow);transition:background .25s,transform .12s}
+.hrow:active:not([disabled]){transform:scale(.98)}
+.hrow[aria-pressed="true"]{background:var(--hs,#E6F8F5)}
+.box{width:34px;height:34px;border:2.5px solid var(--hc,var(--a1));background:var(--hs,transparent);transition:background .2s,border-color .2s}
+.box svg{width:20px;height:20px}
+.box svg path{stroke-dasharray:24;stroke-dashoffset:24}
+.hrow[aria-pressed="true"] .box{background:var(--hc,var(--a1));border-color:var(--hc,var(--a1));color:#fff}
+.hrow[aria-pressed="true"] .box svg path{stroke-dashoffset:0}
+.box.pop{animation:boxpop .5s cubic-bezier(.3,1.5,.5,1)}
+.box.pop svg path{animation:drawc .35s .05s both}
+.streak{display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#FFEDD5,#FFE0C2);color:#C2410C;font-weight:800}
+.streak svg{width:11px;height:11px;fill:#F97316}
+.note{background:linear-gradient(135deg,#E0F7F3,#EDE9FF)}
+.cheer{}
+
+/* month */
+.donut circle+circle{stroke:url(#dg)}
+.kv div{background:linear-gradient(135deg,#F1F5FC,#F6F1FF)}
+.wk .b,.rank .b{background:var(--surface-2)}
+.rank .b i{background:linear-gradient(90deg,#14B8A6,#3B82F6)}
+.cell{transition:transform .12s}
+.cell:active{transform:scale(.8)}
+.cell.pop{animation:cellpop .35s cubic-bezier(.3,1.5,.5,1)}
+
+/* forms + buttons */
+.btn{background:var(--grad);color:#fff;box-shadow:0 8px 18px rgba(59,130,246,.28);transition:transform .12s}
+.btn:active:not([disabled]){transform:scale(.96)}
+.btn.ghost{background:var(--surface-2);color:var(--ink);box-shadow:none}
+.btn.danger{background:var(--danger-soft);color:var(--danger);box-shadow:none}
+.field:focus{border-color:var(--a3);box-shadow:0 0 0 3px rgba(124,92,252,.15)}
+.status.on{background:#D8F3EF;color:#0B7A6E}
+
+/* tab bar */
+.tabbar{left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);border:0;border-radius:26px;padding:6px 4px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(45,60,110,.2)}
+.tabbar .in{padding-inline:2px}
+.tab{border-radius:20px;transition:background .2s,color .2s;gap:1px}
+.tab[aria-current="page"]{background:var(--grad);color:#fff;box-shadow:0 6px 14px rgba(59,130,246,.35)}
+.tab[aria-current="page"] svg{animation:bob .5s cubic-bezier(.3,1.4,.5,1)}
+main{padding-bottom:118px}
+
+/* entrance choreography (only on tab/day/month change, not on every tick) */
+.enter>*{animation:rise .55s cubic-bezier(.2,.8,.25,1) both}
+.enter>*:nth-child(1){animation-delay:0s}
+.enter>*:nth-child(2){animation-delay:.06s}
+.enter>*:nth-child(3){animation-delay:.12s}
+.enter>*:nth-child(4){animation-delay:.18s}
+.enter>*:nth-child(n+5){animation-delay:.24s}
+.enter .hlist{animation:none}
+.enter .hrow{animation:rise .5s cubic-bezier(.2,.8,.25,1) both;animation-delay:calc(var(--i,0)*55ms + .2s)}
+.enter .chip.sel{animation:chipin .5s .25s cubic-bezier(.3,1.5,.5,1) both}
+.enter .donut circle+circle{animation:ring 1.2s .25s cubic-bezier(.2,.8,.2,1) both}
+.enter .ln{stroke-dasharray:1;animation:drawl 1.3s .3s ease both}
+.enter .ar{animation:arfade .9s .8s both}
+@keyframes arfade{from{opacity:0}to{opacity:.18}}
+.enter .wk .b i,.enter .rank .b i{transform-origin:left;animation:grow .9s .3s cubic-bezier(.2,.8,.2,1) both}
+.enter .erow{animation:rise .45s cubic-bezier(.2,.8,.25,1) both}
+
+.conf{position:fixed;z-index:200;width:9px;height:14px;border-radius:2px;pointer-events:none;will-change:transform}
+
+
+.hrow{background:#fff}
+.hrow[aria-pressed="true"]{background:linear-gradient(var(--hs,#E6F8F5),var(--hs,#E6F8F5)),#fff}
+.hrow[aria-pressed="true"] .hname{color:#4A5668}
+.strip{padding-top:14px;margin-top:-8px}
+.erow .sm{width:34px}
+.erow .sm.del.arm{width:auto}
+.key.blank,.key.bk{box-shadow:none;background:transparent}
+/* login: bright + alive */
+#lock{background:linear-gradient(180deg,#E9F8F5 0%,#F3EFFF 100%)}
+.lg-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#14B8A6,#3B82F6,#7C5CFC,#EC4899);background-size:300% 300%;animation:gshift 10s ease infinite;color:#fff}
+.lg-hero>*{position:relative;z-index:1}
+.bub{position:absolute!important;bottom:-60px;border-radius:50%;background:rgba(255,255,255,.2);animation:up 9s linear infinite;z-index:0!important}
+@keyframes up{from{transform:translateY(0) scale(.8);opacity:0}15%{opacity:1}to{transform:translateY(-330px) scale(1.2);opacity:0}}
+.lg-logo{background:#fff;animation:lift 2.8s ease-in-out infinite;box-shadow:0 14px 30px rgba(30,40,120,.3)}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.lg-logo i{background:#E6ECF6}
+.lg-logo i.on{animation:pop .5s ease both}
+.lg-hero h1{text-shadow:0 2px 12px rgba(0,0,0,.18)}
+.lg-hero p{color:rgba(255,255,255,.92)}
+.lg-card{animation:rise .7s .15s cubic-bezier(.2,.8,.25,1) both;box-shadow:0 18px 44px rgba(60,60,140,.2)}
+.dots i{border-color:#C9D3E3}
+.dots i.f{background:linear-gradient(135deg,#14B8A6,#7C5CFC);border-color:transparent;animation:boxpop .3s}
+.key{background:#EEF3FA;box-shadow:0 2px 0 #DCE5F2}
+.key:active{background:var(--grad);color:#fff}
+.lg-phone:focus-within{border-color:var(--a3);box-shadow:0 0 0 3px rgba(124,92,252,.18)}
+.lg-msg{}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 [hidden]{display:none!important}
 html{padding-top:env(safe-area-inset-top,0px)}
 body{margin:0}
@@ -244,6 +383,7 @@ body{margin:0}
 </head>
 <body>
 
+<div class="bgfx" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="lock" hidden></div>
 <div id="app" class="wrap" hidden>
   <header class="top">
@@ -270,6 +410,23 @@ var DOWL=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 var STORE='habitgrid.v1';
 var MAXH=25;
 var STARTER=['Study 2 hours','Attend classes on time','Complete assignments','Revise notes','Drink 2L of water','No Instagram scrolling','Read 10 pages','Exercise / Walk','Sleep before 11 PM','Save money'];
+var HC=['#0E9F8E','#7C5CFC','#EC4899','#F59E0B','#3B82F6','#22C55E','#F97316'];
+var FLAME='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4-3 5-3 9a4 4 0 008 0c0-2-1-3-1-5 2 1 4 4 4 7a8 8 0 01-16 0c0-6 6-7 8-11z"/></svg>';
+var CONF=['#14B8A6','#3B82F6','#7C5CFC','#EC4899','#F59E0B','#22C55E','#F97316'];
+function reduced(){return !!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);}
+function confetti(x,y,n,big){
+  if(reduced()||!Element.prototype.animate)return;
+  for(var i=0;i<n;i++){
+    var el=document.createElement('span');el.className='conf';
+    el.style.left=x+'px';el.style.top=y+'px';el.style.background=CONF[i%CONF.length];
+    if(i%3===0){el.style.borderRadius='50%';el.style.width=el.style.height='9px';}
+    document.body.appendChild(el);
+    var ang=Math.random()*Math.PI*2,sp=(big?150:60)+Math.random()*(big?260:90);
+    var dx=Math.cos(ang)*sp,dy=Math.sin(ang)*sp-(big?140:40),rot=Math.random()*720-360;
+    var a=el.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:'translate('+dx.toFixed(0)+'px,'+(dy+(big?320:120)).toFixed(0)+'px) rotate('+rot.toFixed(0)+'deg)',opacity:0}],{duration:(big?1500:850)+Math.random()*500,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'});
+    a.onfinish=(function(e2){return function(){if(e2.parentNode)e2.parentNode.removeChild(e2);};})(el);
+  }
+}
 var ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
 
 /* ---------- storage (one profile per name, all on this device) ---------- */
@@ -368,6 +525,7 @@ function monthStats(y,m){
 }
 
 /* ---------- render ---------- */
+var prevMeter=0;
 function render(opts){
   opts=opts||{};
   var main=$('#main');
@@ -378,7 +536,16 @@ function render(opts){
   else if(view.tab==='month')html=renderMonth();
   else if(view.tab==='habits')html=renderHabits();
   else html=renderMore();
+  main.className=opts.center?'enter':'';
   main.innerHTML=html;
+  var mi=$('.meter i',main);
+  if(mi){var tg=mi.style.width;mi.style.width=opts.center?'0%':prevMeter+'%';void mi.offsetWidth;mi.style.width=tg;prevMeter=parseFloat(tg)||0;}
+  if(opts.tick&&opts.on){
+    var bx=$('.hrow[data-h="'+opts.tick+'"] .box',main);
+    if(bx){bx.classList.add('pop');var rc=bx.getBoundingClientRect();confetti(rc.left+rc.width/2,rc.top+rc.height/2,14,false);}
+    if($('.hero.party',main))setTimeout(function(){confetti(window.innerWidth/2,window.innerHeight*0.32,80,true);},260);
+  }
+  if(opts.cell&&opts.on){var ce=$('.cell[data-h="'+opts.cell.h+'"][data-d="'+opts.cell.d+'"]',main);if(ce)ce.classList.add('pop');}
   Array.prototype.forEach.call(document.querySelectorAll('.tab'),function(b){
     if(b.dataset.tab===view.tab)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
   });
@@ -417,10 +584,11 @@ function renderToday(){
   h+='</div>';
   var done=0;H.forEach(function(x){if(isOn(x.id,y,m,d))done++;});
   var dd=new Date(y,m,d),fut=isFuture(y,m,d);
-  h+='<section class="card"><div class="sum"><div><div class="eyebrow">'+(t.y===y&&t.m===m&&t.d===d?'Today':DOWL[dd.getDay()])+'</div><h3>'+DOWL[dd.getDay()]+', '+d+' '+MONTHS[m].slice(0,3)+'</h3></div>'
+  var cheer=!H.length?'':done===0?'Tap a habit below to get started':done===H.length?'Perfect day. Every habit done!':(done/H.length>=.5?'Over halfway. Keep going!':'Good start. Keep it up!');
+  h+='<section class="card hero'+((done===H.length&&H.length)?' party':'')+'"><div class="sum"><div><div class="eyebrow">'+(t.y===y&&t.m===m&&t.d===d?'Today':DOWL[dd.getDay()])+'</div><h3>'+DOWL[dd.getDay()]+', '+d+' '+MONTHS[m].slice(0,3)+'</h3></div>'
    +'<div class="big num">'+done+'<small> / '+H.length+'</small></div></div>'
    +'<div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+(H.length?Math.round(done/H.length*100):0)+'"><i style="width:'+(H.length?done/H.length*100:0)+'%"></i></div>'
-   +(fut?'<p>This day is still ahead. You can tick it once it arrives.</p>':'')
+   +(fut?'<p>This day is still ahead. You can tick it once it arrives.</p>':(cheer?'<p class="cheer">'+cheer+'</p>':''))
    +'</section>';
   if(state.starter){
     h+='<div class="note"><div><b>Welcome.</b> These are starter habits. Change them in the Habits tab. Everything you tick is saved only on this device.</div><button data-act="dismiss">Got it</button></div>';
@@ -429,9 +597,9 @@ function renderToday(){
     h+='<div class="empty">No habits yet.<br><button class="btn" style="margin-top:12px" data-tab-go="habits">Add your first habit</button></div>';
   }else{
     h+='<div class="hlist">';
-    st.per.forEach(function(p){
-      var on=isOn(p.h.id,y,m,d),sk=streak(p.h.id,y,m,d);
-      h+='<button class="hrow" data-act="tick" data-h="'+esc(p.h.id)+'" aria-pressed="'+on+'"'+(fut?' disabled':'')+'><span class="box">'+ICON_CHECK+'</span><span class="hname">'+esc(p.h.name)+'</span><span class="hmeta"><b class="num">'+p.done+'/'+dim+'</b>'+(sk>=2?'<span class="streak">'+sk+'-day streak</span>':'this month')+'</span></button>';
+    st.per.forEach(function(p,pi){
+      var on=isOn(p.h.id,y,m,d),sk=streak(p.h.id,y,m,d),hc=HC[pi%HC.length];
+      h+='<button class="hrow" data-act="tick" data-h="'+esc(p.h.id)+'" aria-pressed="'+on+'" style="--hc:'+hc+';--hs:'+hc+'1F;--i:'+pi+'"'+(fut?' disabled':'')+'><span class="box">'+ICON_CHECK+'</span><span class="hname">'+esc(p.h.name)+'</span><span class="hmeta"><b class="num">'+p.done+'/'+dim+'</b>'+(sk>=2?'<span class="streak">'+FLAME+sk+'-day streak</span>':'this month')+'</span></button>';
     });
     h+='</div>';
   }
@@ -457,8 +625,8 @@ function areaChart(st,y,m){
   if(last>0&&st.goal>0){
     var pts=[];for(var d=1;d<=last;d++)pts.push([x(d),yv(st.comp[d]/st.goal)]);
     var line=pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ');
-    s+='<path d="'+line+' L'+pts[pts.length-1][0].toFixed(1)+' '+yb+' L'+pts[0][0].toFixed(1)+' '+yb+' Z" fill="var(--accent)" opacity=".18"/>';
-    s+='<path d="'+line+'" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+    s+='<path d="'+line+' L'+pts[pts.length-1][0].toFixed(1)+' '+yb+' L'+pts[0][0].toFixed(1)+' '+yb+' Z" fill="var(--accent)" opacity=".18" class="ar"/>';
+    s+='<path class="ln" pathLength="1" d="'+line+'" fill="none" stroke="var(--a2)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
     var e=pts[pts.length-1];
     s+='<circle cx="'+e[0].toFixed(1)+'" cy="'+e[1].toFixed(1)+'" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>';
   }else{
@@ -469,7 +637,7 @@ function areaChart(st,y,m){
 
 function donut(p){
   var r=44,c=2*Math.PI*r,off=c*(1-Math.min(1,p));
-  return '<div class="donut"><svg viewBox="0 0 112 112"><circle cx="56" cy="56" r="'+r+'" fill="none" stroke="var(--surface-2)" stroke-width="12"/><circle cx="56" cy="56" r="'+r+'" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+c.toFixed(1)+'" stroke-dashoffset="'+off.toFixed(1)+'"/></svg><div class="c"><b class="num">'+pct(p)+'</b><span>of month</span></div></div>';
+  return '<div class="donut" style="--c:'+c.toFixed(1)+'"><svg viewBox="0 0 112 112"><defs><linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14B8A6"/><stop offset="1" stop-color="#7C5CFC"/></linearGradient></defs><circle cx="56" cy="56" r="'+r+'" fill="none" stroke="var(--surface-2)" stroke-width="12"/><circle cx="56" cy="56" r="'+r+'" fill="none" stroke="#14B8A6" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+c.toFixed(1)+'" stroke-dashoffset="'+off.toFixed(1)+'"/></svg><div class="c"><b class="num">'+pct(p)+'</b><span>of month</span></div></div>';
 }
 
 function renderMonth(){
@@ -559,8 +727,8 @@ document.addEventListener('click',function(e){
   var a=el.dataset.act,id=el.dataset.h,H=state.habits,i;
   if(a==='rename')return;
   if(a!=='del')pendingDel=(a==='askwipe'||a==='cancelwipe')?pendingDel:null;
-  if(a==='tick'){toggle(id,view.y,view.m,view.d);render();}
-  else if(a==='cell'){toggle(id,view.y,view.m,+el.dataset.d);render();}
+  if(a==='tick'){var wasOn=isOn(id,view.y,view.m,view.d);toggle(id,view.y,view.m,view.d);render({tick:id,on:!wasOn});}
+  else if(a==='cell'){var wc=isOn(id,view.y,view.m,+el.dataset.d);toggle(id,view.y,view.m,+el.dataset.d);render({cell:{h:id,d:+el.dataset.d},on:!wc});}
   else if(a==='day'){view.d=+el.dataset.d;render({center:true});}
   else if(a==='prev'||a==='next'){
     var mm=view.m+(a==='next'?1:-1),yy=view.y;
@@ -636,7 +804,7 @@ function setPasscode(){
 
 /* ---------- login (mobile number + 4-digit PIN) ---------- */
 var L={step:'enter',first:'',pin:''}, fails=0, lockUntil=0;
-var DUMBBELL=(function(){var on={};function a(r,c){on[r+','+c]=1;}for(var r=1;r<=5;r++){a(r,1);a(r,7);}for(r=2;r<=4;r++){a(r,0);a(r,8);}for(var c=2;c<=6;c++)a(3,c);var h='';for(var r2=0;r2<7;r2++)for(var c2=0;c2<9;c2++){var k=r2+','+c2;h+=on[k]?'<i class="on" style="animation-delay:'+(c2*45+r2*20)+'ms"></i>':'<i></i>';}return h;})();
+var DUMBBELL=(function(){var on={};function a(r,c){on[r+','+c]=1;}for(var r=1;r<=5;r++){a(r,1);a(r,7);}for(r=2;r<=4;r++){a(r,0);a(r,8);}for(var c=2;c<=6;c++)a(3,c);var h='';for(var r2=0;r2<7;r2++)for(var c2=0;c2<9;c2++){var k=r2+','+c2;var t=c2/8,cr=Math.round(20+(124-20)*t),cg=Math.round(184+(92-184)*t),cb=Math.round(166+(252-166)*t);h+=on[k]?'<i class="on" style="background:rgb('+cr+','+cg+','+cb+');animation-delay:'+(c2*45+r2*20)+'ms"></i>':'<i></i>';}return h;})();
 var BKSP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 5H9l-6 7 6 7h12a1 1 0 001-1V6a1 1 0 00-1-1z"/><path d="M17 9.5l-5 5M12 9.5l5 5"/></svg>';
 function fmtPhone(d){return '+91 '+d.slice(0,5)+' '+d.slice(5);}
 function logout(){
@@ -648,7 +816,7 @@ function showLogin(msg){
   var keys='';[1,2,3,4,5,6,7,8,9].forEach(function(n){keys+='<button type="button" class="key" data-k="'+n+'" aria-label="'+n+'">'+n+'</button>';});
   keys+='<span class="key blank"></span><button type="button" class="key" data-k="0" aria-label="0">0</button><button type="button" class="key bk" data-k="b" aria-label="Delete">'+BKSP+'</button>';
   var Lk=$('#lock');Lk.hidden=false;
-  Lk.innerHTML='<div class="lg"><div class="lg-hero"><div class="lg-logo" aria-hidden="true">'+DUMBBELL+'</div><h1>Habit Grid</h1><p>Small steps. Every day.</p></div>'
+  Lk.innerHTML='<div class="lg"><div class="lg-hero"><span class="bub" style="left:8%;width:40px;height:40px;animation-delay:0s"></span><span class="bub" style="left:24%;width:22px;height:22px;animation-delay:-3s"></span><span class="bub" style="left:46%;width:56px;height:56px;animation-delay:-5s"></span><span class="bub" style="left:66%;width:28px;height:28px;animation-delay:-1.5s"></span><span class="bub" style="left:84%;width:44px;height:44px;animation-delay:-6.5s"></span><div class="lg-logo" aria-hidden="true">'+DUMBBELL+'</div><h1>Habit Grid</h1><p>Small steps. Every day.</p></div>'
    +'<div class="lg-card"><div class="lg-l">Mobile number</div><div class="lg-phone" id="phoneWrap"><span>+91</span><input id="phoneIn" type="tel" inputmode="numeric" maxlength="10" autocomplete="off" placeholder="98765 43210" aria-label="10-digit mobile number"></div>'
    +'<div class="lg-pin"><div class="lg-l" id="pinLabel">Enter your 4-digit PIN</div><div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>'
    +'<div class="lg-msg msg err" id="lockMsg" role="alert" aria-live="polite"></div>'
